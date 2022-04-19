@@ -11,15 +11,14 @@ import java.util.List;
 public class RestaurantAmenity {
 
     @Id @GeneratedValue
-    @Column(name = "item_id")
+    @Column(name = "restaurant_amenity_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
-    @OneToMany
-    @JoinColumn(name = "item_id")
-    List<AmenityItem> restaurantAmenities = new ArrayList<>();
+    @OneToMany(mappedBy = "restaurantAmenity")
+    List<RestaurantAmenityItem> restaurantAmenities = new ArrayList<>();
 
 }

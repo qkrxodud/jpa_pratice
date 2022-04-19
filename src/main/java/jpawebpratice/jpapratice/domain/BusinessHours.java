@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 public class BusinessHours {
 
     @Id @GeneratedValue
+    @Column(name = "BusinessHours")
     private Long id;
 
     @ManyToOne

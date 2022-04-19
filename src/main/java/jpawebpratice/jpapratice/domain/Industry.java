@@ -12,16 +12,13 @@ import java.util.List;
 public class Industry {
 
     @Id @GeneratedValue
+    @Column(name = "industry_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
-    @OneToMany
-    @JoinColumn(name = "item_id")
-    List<AmenityItem> restaurantAmenities = new ArrayList<>();
-
-
-
+    @OneToMany(mappedBy = "industry")
+    List<IndustryItem> industryItems = new ArrayList<>();
 }

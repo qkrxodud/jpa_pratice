@@ -14,10 +14,17 @@ public class Member {
 
     @Id
     @GeneratedValue
+    @Column(name = "member_id")
     private Long id;
 
     @OneToMany(mappedBy = "member")
     private List<Restaurant> restaurantList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<Comment> comments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<MemberRestaurantStatus> memberRestaurantStatuses = new ArrayList<>();
 
     private String nickName;
     private String self_info;

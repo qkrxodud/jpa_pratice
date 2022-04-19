@@ -6,9 +6,10 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-public class CommentFiles {
+public class CommentFile {
 
     @Id @GeneratedValue
+    @Column(name = "comment_file_id")
     private Long id;
 
     @ManyToOne

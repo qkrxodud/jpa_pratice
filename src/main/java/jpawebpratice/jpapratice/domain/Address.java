@@ -1,8 +1,11 @@
 package jpawebpratice.jpapratice.domain;
 
+import jpawebpratice.jpapratice.domain.Exception.NotEnoughStockException;
 import lombok.Getter;
 
 import javax.persistence.Embeddable;
+
+import static jpawebpratice.jpapratice.domain.comm.commFunction.isStringEmpty;
 
 @Embeddable
 @Getter
@@ -17,7 +20,7 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-    public Address() {
+    protected Address() {
 
     }
 }
