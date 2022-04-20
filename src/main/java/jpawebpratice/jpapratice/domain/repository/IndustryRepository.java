@@ -16,7 +16,7 @@ public class IndustryRepository {
     public List<Restaurant> findByRestaurantList(String name) {
         return em.createQuery("Select r from Restaurant r  " +
                                              " inner join Industry i on r.id = i.restaurant.id " +
-                                             " where i.restaurant.industry = :industyName")
+                                             " where i.restaurant.name = :industyName")
                 .setParameter("industyName", name)
                 .getResultList();
     }
